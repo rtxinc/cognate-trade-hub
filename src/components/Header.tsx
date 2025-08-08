@@ -20,7 +20,7 @@ export const Header = () => {
             <a href="#accounts" className="text-muted-foreground hover:text-accent transition-colors">
               Account Types
             </a>
-            <a href="#platform" className="text-muted-foreground hover:text-accent transition-colors">
+            <a href="/platform" className="text-muted-foreground hover:text-accent transition-colors">
               Platform
             </a>
             <a href="#contact" className="text-muted-foreground hover:text-accent transition-colors">
