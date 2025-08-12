@@ -18,40 +18,80 @@ import {
   Target,
   LineChart,
   Clock,
-  DollarSign
+  DollarSign,
+  BookOpen,
+  Code,
+  Users,
+  Award,
+  Layers,
+  Activity,
+  Eye,
+  Cpu,
+  Database,
+  Lightbulb,
+  TrendingDown,
+  ArrowUpDown,
+  PieChart
 } from "lucide-react";
 
 const Platform = () => {
-  const features = [
+  const uniqueFeatures = [
     {
-      icon: BarChart3,
-      title: "Advanced Charting",
-      description: "Professional-grade charts with 100+ technical indicators, multiple timeframes, and customizable layouts"
+      icon: Layers,
+      title: "Multi-Asset Trading",
+      description: "Trade Forex, Stocks, Commodities, Indices, and Cryptocurrencies all from one unified platform with real-time execution"
     },
     {
-      icon: Brain,
-      title: "Expert Advisors",
-      description: "Automated trading with custom algorithms, backtesting capabilities, and strategy optimization"
+      icon: Code,
+      title: "MQL5 Programming",
+      description: "Develop custom Expert Advisors, indicators, and scripts with the powerful MQL5 language and built-in IDE"
     },
     {
-      icon: Target,
-      title: "Market Depth",
-      description: "Level II pricing, time & sales data, and advanced order book visualization for better market insight"
+      icon: Activity,
+      title: "One-Click Trading",
+      description: "Execute trades instantly with one-click functionality, customizable hotkeys, and rapid order placement tools"
     },
     {
-      icon: Calendar,
-      title: "Economic Calendar",
-      description: "Built-in economic calendar with real-time news feeds and market-moving event notifications"
+      icon: Database,
+      title: "Strategy Tester",
+      description: "Advanced backtesting engine with genetic algorithms, optimization, and forward testing capabilities"
     },
     {
-      icon: Settings,
-      title: "Custom Indicators",
-      description: "Create and install custom technical indicators using MQL5 programming language"
+      icon: Eye,
+      title: "Market Watch",
+      description: "Real-time quotes, tick charts, market depth, and customizable symbol lists with advanced filtering"
     },
     {
-      icon: Shield,
-      title: "Risk Management",
-      description: "Advanced risk management tools including stop-loss, take-profit, and position sizing controls"
+      icon: Cpu,
+      title: "VPS Integration",
+      description: "Seamless Virtual Private Server integration for 24/7 automated trading with minimal latency"
+    }
+  ];
+
+  const tradingStrategies = [
+    {
+      icon: TrendingUp,
+      title: "Trend Following",
+      description: "Identify and capitalize on market trends using moving averages, MACD, and momentum indicators",
+      techniques: ["Moving Average Crossovers", "Bollinger Band Breakouts", "ADX Trend Strength"]
+    },
+    {
+      icon: ArrowUpDown,
+      title: "Scalping Strategies",
+      description: "High-frequency trading techniques for capturing small price movements in liquid markets",
+      techniques: ["1-Minute Charts", "Price Action Scalping", "Order Flow Analysis"]
+    },
+    {
+      icon: TrendingDown,
+      title: "Counter-Trend Trading", 
+      description: "Profit from market reversals using oscillators and support/resistance levels",
+      techniques: ["RSI Divergence", "Fibonacci Retracements", "Double Top/Bottom Patterns"]
+    },
+    {
+      icon: PieChart,
+      title: "Portfolio Diversification",
+      description: "Multi-asset strategies to reduce risk and maximize returns across different markets",
+      techniques: ["Currency Correlation", "Cross-Asset Analysis", "Risk Parity Models"]
     }
   ];
 
@@ -152,20 +192,20 @@ const Platform = () => {
         </div>
       </section>
 
-      {/* Key Features */}
+      {/* Unique MT5 Features */}
       <section className="py-20 bg-gradient-card">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">
-              Professional Trading Features
+              Exclusive MT5 Features
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              MetaTrader 5 provides everything you need for successful trading across multiple asset classes
+              Discover what makes MetaTrader 5 the most advanced trading platform for professionals
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
+            {uniqueFeatures.map((feature, index) => (
               <Card key={index} className="bg-card border-accent/20 p-6 hover:shadow-card transition-all duration-300 group">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="p-3 rounded-lg bg-accent/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-300">
@@ -174,6 +214,51 @@ const Platform = () => {
                   <h3 className="text-xl font-semibold text-foreground">{feature.title}</h3>
                 </div>
                 <p className="text-muted-foreground">{feature.description}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Trading Strategies Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              Professional Trading Strategies
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Master proven strategies used by professional traders worldwide with MetaTrader 5
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {tradingStrategies.map((strategy, index) => (
+              <Card key={index} className="bg-gradient-card border-accent/20 p-8 hover:shadow-glow transition-all duration-300 group">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-4 rounded-lg bg-gradient-accent text-accent-foreground group-hover:scale-110 transition-transform duration-300">
+                    <strategy.icon className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-foreground">{strategy.title}</h3>
+                    <p className="text-muted-foreground mt-2">{strategy.description}</p>
+                  </div>
+                </div>
+                
+                <div className="space-y-3">
+                  <h4 className="text-lg font-semibold text-foreground flex items-center gap-2">
+                    <Lightbulb className="w-5 h-5 text-accent" />
+                    Key Techniques
+                  </h4>
+                  <ul className="space-y-2">
+                    {strategy.techniques.map((technique, idx) => (
+                      <li key={idx} className="flex items-center gap-2">
+                        <CheckCircle className="w-4 h-4 text-success" />
+                        <span className="text-foreground">{technique}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </Card>
             ))}
           </div>
