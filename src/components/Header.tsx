@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/enhanced-button";
 import { TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
@@ -20,9 +21,9 @@ export const Header = () => {
             <a href="#accounts" className="text-muted-foreground hover:text-accent transition-colors">
               Account Types
             </a>
-            <a href="/platform" className="text-muted-foreground hover:text-accent transition-colors">
+            <Link to="/platform" className="text-muted-foreground hover:text-accent transition-colors">
               Platform
-            </a>
+            </Link>
             <a href="#contact" className="text-muted-foreground hover:text-accent transition-colors">
               Contact
             </a>
