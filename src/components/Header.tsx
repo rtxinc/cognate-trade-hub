@@ -24,6 +24,9 @@ export const Header = () => {
             <Link to="/platform" className="text-muted-foreground hover:text-accent transition-colors">
               Platform
             </Link>
+            <Link to="/portal" className="text-muted-foreground hover:text-accent transition-colors">
+              Client Portal
+            </Link>
             <a href="#contact" className="text-muted-foreground hover:text-accent transition-colors">
               Contact
             </a>
