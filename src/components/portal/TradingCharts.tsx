@@ -32,13 +32,87 @@ export const TradingCharts = () => {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="h-96 bg-muted/20 rounded-lg flex items-center justify-center">
-            <div className="text-center">
-              <Zap className="w-12 h-12 mx-auto mb-4 text-accent" />
-              <h3 className="text-xl font-semibold mb-2">Real-Time Trading Charts</h3>
-              <p className="text-muted-foreground">
-                Advanced TradingView charts with technical indicators, multiple timeframes, and real-time data
-              </p>
+          <div className="h-96 bg-gradient-subtle rounded-lg relative overflow-hidden">
+            {/* Simulated Chart Background */}
+            <div className="absolute inset-0 opacity-20">
+              <svg className="w-full h-full" viewBox="0 0 400 200">
+                <path 
+                  d="M0,150 Q50,120 100,130 T200,110 T300,85 T400,75" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  fill="none" 
+                  className="text-accent"
+                />
+                <path 
+                  d="M0,180 L50,175 L100,165 L150,170 L200,160 L250,145 L300,140 L350,135 L400,130" 
+                  stroke="currentColor" 
+                  strokeWidth="1" 
+                  fill="none" 
+                  className="text-success"
+                />
+              </svg>
+            </div>
+            
+            {/* Chart Interface */}
+            <div className="relative z-10 p-6">
+              <div className="flex justify-between items-center mb-4">
+                <div className="flex items-center gap-4">
+                  <select className="bg-background border border-border rounded px-3 py-1 text-sm">
+                    <option>EUR/USD</option>
+                    <option>GBP/USD</option>
+                    <option>BTC/USD</option>
+                  </select>
+                  <div className="text-xl font-bold">1.0875</div>
+                  <div className="text-success text-sm">+0.0012 (+0.11%)</div>
+                </div>
+                <div className="flex gap-2">
+                  {['1m', '5m', '15m', '1h', '4h', '1d'].map((timeframe) => (
+                    <button 
+                      key={timeframe}
+                      className="px-2 py-1 text-xs bg-muted hover:bg-accent hover:text-accent-foreground rounded"
+                    >
+                      {timeframe}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="absolute bottom-6 left-6 right-6">
+                <div className="flex justify-between text-xs text-muted-foreground">
+                  <span>09:00</span>
+                  <span>12:00</span>
+                  <span>15:00</span>
+                  <span>18:00</span>
+                </div>
+              </div>
+            </div>
+            
+            {/* Trading Panel */}
+            <div className="absolute top-4 right-4 bg-background/95 backdrop-blur border border-border rounded-lg p-4 w-48">
+              <div className="space-y-3">
+                <div className="flex gap-2">
+                  <button className="flex-1 bg-success text-success-foreground py-2 text-sm rounded">
+                    BUY
+                  </button>
+                  <button className="flex-1 bg-destructive text-destructive-foreground py-2 text-sm rounded">
+                    SELL
+                  </button>
+                </div>
+                <div className="space-y-2 text-sm">
+                  <div className="flex justify-between">
+                    <span>Lot Size:</span>
+                    <input className="w-16 px-1 border border-border rounded text-right" defaultValue="1.0" />
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Stop Loss:</span>
+                    <input className="w-16 px-1 border border-border rounded text-right" placeholder="1.0820" />
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Take Profit:</span>
+                    <input className="w-16 px-1 border border-border rounded text-right" placeholder="1.0920" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </CardContent>

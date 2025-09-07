@@ -6,6 +6,9 @@ import { InvestmentDashboard } from "@/components/portal/InvestmentDashboard";
 import { TradingCharts } from "@/components/portal/TradingCharts";
 import { WalletManager } from "@/components/portal/WalletManager";
 import { AccountCreation } from "@/components/portal/AccountCreation";
+import { TradingHistory } from "@/components/portal/TradingHistory";
+import { RiskManagement } from "@/components/portal/RiskManagement";
+import { MarketAnalysis } from "@/components/portal/MarketAnalysis";
 import { useState } from "react";
 
 export default function ClientPortal() {
@@ -110,11 +113,23 @@ export default function ClientPortal() {
             <TradingCharts />
           </TabsContent>
 
-          <TabsContent value="wallet">
-            <WalletManager />
-          </TabsContent>
+        <TabsContent value="wallet">
+          <WalletManager />
+        </TabsContent>
 
-          <TabsContent value="investment">
+        <TabsContent value="history">
+          <TradingHistory />
+        </TabsContent>
+
+        <TabsContent value="risk">
+          <RiskManagement />
+        </TabsContent>
+
+        <TabsContent value="analysis">
+          <MarketAnalysis />
+        </TabsContent>
+
+        <TabsContent value="investment">
             <div className="space-y-6">
               {/* Investment Products Header */}
               <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg p-6 border border-primary/20">
