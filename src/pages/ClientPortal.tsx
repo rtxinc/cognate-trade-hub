@@ -1,5 +1,7 @@
 import { Header } from "@/components/Header";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { TrendingUp, DollarSign, PieChart } from "lucide-react";
 import { InvestmentDashboard } from "@/components/portal/InvestmentDashboard";
 import { TradingCharts } from "@/components/portal/TradingCharts";
 import { WalletManager } from "@/components/portal/WalletManager";
@@ -113,50 +115,175 @@ export default function ClientPortal() {
           </TabsContent>
 
           <TabsContent value="investment">
-            <div className="bg-card rounded-lg p-6">
-              <h2 className="text-2xl font-semibold mb-6">Investment Opportunities</h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="border border-border rounded-lg p-6">
-                  <h3 className="text-xl font-semibold mb-4">Forex Trading</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Trade major currency pairs with tight spreads and leverage up to 1:500
-                  </p>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span>Minimum Deposit:</span>
-                      <span className="text-accent">$100</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Maximum Leverage:</span>
-                      <span className="text-accent">1:500</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Spreads From:</span>
-                      <span className="text-accent">0.1 pips</span>
-                    </div>
-                  </div>
-                </div>
+            <div className="space-y-6">
+              {/* Investment Products Header */}
+              <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg p-6 border border-primary/20">
+                <h2 className="text-3xl font-bold mb-2">Investment Products</h2>
+                <p className="text-muted-foreground text-lg">
+                  Diversify your portfolio with our premium investment solutions
+                </p>
+              </div>
 
-                <div className="border border-border rounded-lg p-6">
-                  <h3 className="text-xl font-semibold mb-4">Cryptocurrency</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Trade Bitcoin, Ethereum, and other major cryptocurrencies 24/7
-                  </p>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span>Minimum Deposit:</span>
-                      <span className="text-accent">$50</span>
+              {/* Product Categories */}
+              <div className="grid lg:grid-cols-3 gap-6">
+                {/* Forex */}
+                <Card className="bg-gradient-to-br from-blue-500/5 to-blue-600/10 border-blue-500/20">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-blue-600">
+                      <TrendingUp className="w-5 h-5" />
+                      Forex Trading
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <p className="text-sm text-muted-foreground">
+                      Trade 40+ major, minor & exotic currency pairs with institutional-grade execution
+                    </p>
+                    <div className="space-y-3">
+                      <div className="flex justify-between text-sm">
+                        <span>Minimum Deposit:</span>
+                        <span className="font-semibold text-blue-600">$100</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span>Maximum Leverage:</span>
+                        <span className="font-semibold text-blue-600">1:500</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span>Spreads From:</span>
+                        <span className="font-semibold text-blue-600">0.1 pips</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span>Commission:</span>
+                        <span className="font-semibold text-green-600">$0</span>
+                      </div>
                     </div>
-                    <div className="flex justify-between">
-                      <span>Available Pairs:</span>
-                      <span className="text-accent">50+</span>
+                    <button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-md transition-colors">
+                      Start Forex Trading
+                    </button>
+                  </CardContent>
+                </Card>
+
+                {/* Cryptocurrency */}
+                <Card className="bg-gradient-to-br from-orange-500/5 to-orange-600/10 border-orange-500/20">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-orange-600">
+                      <DollarSign className="w-5 h-5" />
+                      Cryptocurrency
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <p className="text-sm text-muted-foreground">
+                      Trade Bitcoin, Ethereum, and 50+ altcoins with advanced charting tools
+                    </p>
+                    <div className="space-y-3">
+                      <div className="flex justify-between text-sm">
+                        <span>Minimum Deposit:</span>
+                        <span className="font-semibold text-orange-600">$50</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span>Available Pairs:</span>
+                        <span className="font-semibold text-orange-600">50+</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span>Trading Hours:</span>
+                        <span className="font-semibold text-orange-600">24/7</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span>Max Leverage:</span>
+                        <span className="font-semibold text-orange-600">1:100</span>
+                      </div>
                     </div>
-                    <div className="flex justify-between">
-                      <span>Trading Hours:</span>
-                      <span className="text-accent">24/7</span>
+                    <button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-md transition-colors">
+                      Trade Crypto
+                    </button>
+                  </CardContent>
+                </Card>
+
+                {/* Commodities */}
+                <Card className="bg-gradient-to-br from-yellow-500/5 to-yellow-600/10 border-yellow-500/20">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-yellow-600">
+                      <PieChart className="w-5 h-5" />
+                      Commodities
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <p className="text-sm text-muted-foreground">
+                      Trade gold, silver, oil, and agricultural commodities with tight spreads
+                    </p>
+                    <div className="space-y-3">
+                      <div className="flex justify-between text-sm">
+                        <span>Minimum Deposit:</span>
+                        <span className="font-semibold text-yellow-600">$200</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span>Available Assets:</span>
+                        <span className="font-semibold text-yellow-600">25+</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span>Max Leverage:</span>
+                        <span className="font-semibold text-yellow-600">1:200</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span>Market Hours:</span>
+                        <span className="font-semibold text-yellow-600">24/5</span>
+                      </div>
                     </div>
-                  </div>
-                </div>
+                    <button className="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded-md transition-colors">
+                      Trade Commodities
+                    </button>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Premium Services */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card className="bg-gradient-to-br from-purple-500/5 to-purple-600/10 border-purple-500/20">
+                  <CardHeader>
+                    <CardTitle className="text-purple-600">Managed Portfolios</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <p className="text-sm text-muted-foreground">
+                      Let our expert traders manage your portfolio with proven strategies
+                    </p>
+                    <div className="grid grid-cols-2 gap-4 text-sm">
+                      <div>
+                        <div className="font-semibold text-purple-600">Conservative</div>
+                        <div className="text-muted-foreground">5-8% annual return</div>
+                      </div>
+                      <div>
+                        <div className="font-semibold text-purple-600">Aggressive</div>
+                        <div className="text-muted-foreground">15-25% annual return</div>
+                      </div>
+                    </div>
+                    <button className="w-full bg-purple-500 hover:bg-purple-600 text-white py-2 rounded-md transition-colors">
+                      Get Started
+                    </button>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-gradient-to-br from-green-500/5 to-green-600/10 border-green-500/20">
+                  <CardHeader>
+                    <CardTitle className="text-green-600">Copy Trading</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <p className="text-sm text-muted-foreground">
+                      Copy trades from successful traders and earn while you learn
+                    </p>
+                    <div className="grid grid-cols-2 gap-4 text-sm">
+                      <div>
+                        <div className="font-semibold text-green-600">Top Traders</div>
+                        <div className="text-muted-foreground">500+ verified</div>
+                      </div>
+                      <div>
+                        <div className="font-semibold text-green-600">Min Copy</div>
+                        <div className="text-muted-foreground">$100</div>
+                      </div>
+                    </div>
+                    <button className="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-md transition-colors">
+                      Browse Traders
+                    </button>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </TabsContent>

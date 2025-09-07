@@ -71,36 +71,51 @@ export const InvestmentDashboard = () => {
 
       {/* Quick Actions */}
       <div className="grid md:grid-cols-3 gap-6">
-        <Card className="bg-gradient-card border-border">
+        <Card className="bg-gradient-to-br from-green-500/10 to-green-600/5 border-green-500/20 hover:border-green-500/30 transition-all duration-300 group">
           <CardContent className="p-6 text-center">
-            <DollarSign className="w-8 h-8 mx-auto mb-4 text-accent" />
-            <h3 className="font-semibold mb-2">Deposit Funds</h3>
-            <p className="text-sm text-muted-foreground mb-4">Add funds to your trading account</p>
-            <button className="w-full bg-accent text-accent-foreground py-2 rounded-md hover:opacity-90 transition-opacity">
-              Deposit
+            <div className="w-12 h-12 mx-auto mb-4 bg-green-500/20 rounded-full flex items-center justify-center group-hover:bg-green-500/30 transition-colors">
+              <DollarSign className="w-6 h-6 text-green-500" />
+            </div>
+            <h3 className="font-semibold mb-2 text-lg">Deposit Funds</h3>
+            <p className="text-sm text-muted-foreground mb-4">Instant deposits via crypto, wire transfer, or card</p>
+            <button className="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-md font-medium transition-all duration-200 shadow-lg hover:shadow-green-500/25">
+              Deposit Now
             </button>
+            <div className="mt-3 text-xs text-muted-foreground">
+              Min: $100 • Instant processing
+            </div>
           </CardContent>
         </Card>
 
-        <Card className="bg-gradient-card border-border">
+        <Card className="bg-gradient-to-br from-blue-500/10 to-blue-600/5 border-blue-500/20 hover:border-blue-500/30 transition-all duration-300 group">
           <CardContent className="p-6 text-center">
-            <TrendingUp className="w-8 h-8 mx-auto mb-4 text-accent" />
-            <h3 className="font-semibold mb-2">Start Trading</h3>
-            <p className="text-sm text-muted-foreground mb-4">Open new positions in the market</p>
-            <button className="w-full bg-accent text-accent-foreground py-2 rounded-md hover:opacity-90 transition-opacity">
+            <div className="w-12 h-12 mx-auto mb-4 bg-blue-500/20 rounded-full flex items-center justify-center group-hover:bg-blue-500/30 transition-colors">
+              <TrendingUp className="w-6 h-6 text-blue-500" />
+            </div>
+            <h3 className="font-semibold mb-2 text-lg">Start Trading</h3>
+            <p className="text-sm text-muted-foreground mb-4">Access 500+ instruments with leverage up to 1:500</p>
+            <button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-md font-medium transition-all duration-200 shadow-lg hover:shadow-blue-500/25">
               Trade Now
             </button>
+            <div className="mt-3 text-xs text-muted-foreground">
+              Spreads from 0.1 pips • No commissions
+            </div>
           </CardContent>
         </Card>
 
-        <Card className="bg-gradient-card border-border">
+        <Card className="bg-gradient-to-br from-purple-500/10 to-purple-600/5 border-purple-500/20 hover:border-purple-500/30 transition-all duration-300 group">
           <CardContent className="p-6 text-center">
-            <PieChart className="w-8 h-8 mx-auto mb-4 text-accent" />
-            <h3 className="font-semibold mb-2">Portfolio Analysis</h3>
-            <p className="text-sm text-muted-foreground mb-4">View detailed portfolio insights</p>
-            <button className="w-full bg-accent text-accent-foreground py-2 rounded-md hover:opacity-90 transition-opacity">
-              Analyze
+            <div className="w-12 h-12 mx-auto mb-4 bg-purple-500/20 rounded-full flex items-center justify-center group-hover:bg-purple-500/30 transition-colors">
+              <PieChart className="w-6 h-6 text-purple-500" />
+            </div>
+            <h3 className="font-semibold mb-2 text-lg">Portfolio Analysis</h3>
+            <p className="text-sm text-muted-foreground mb-4">Advanced analytics and risk management tools</p>
+            <button className="w-full bg-purple-500 hover:bg-purple-600 text-white py-3 rounded-md font-medium transition-all duration-200 shadow-lg hover:shadow-purple-500/25">
+              Analyze Portfolio
             </button>
+            <div className="mt-3 text-xs text-muted-foreground">
+              Real-time insights • Risk metrics
+            </div>
           </CardContent>
         </Card>
       </div>
